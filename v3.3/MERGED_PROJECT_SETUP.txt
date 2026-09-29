@@ -1,0 +1,31 @@
+WEALTHTRACK FINAL MERGED PROJECT
+=================================
+
+This project combines the V2 WealthTrack application with the V1 WealthBot/Gemini functionality.
+
+Included:
+- V2 WealthTrack dashboard/application
+- Gemini-powered WealthBot
+- Web Search ON/OFF
+- WealthTrack financial data passed to Gemini
+- Web-search filters and freshness selector
+- Server-side Gemini API key usage through .env
+- Existing V2 application structure preserved
+
+IMPORTANT:
+1. Put your existing .env in the project root (beside package.json if that is where your original V2 .env lived).
+2. Set:
+   GEMINI_API_KEY=YOUR_KEY
+   GEMINI_MODEL=YOUR_AVAILABLE_MODEL
+3. Do NOT put the API key directly into main.jsx.
+4. From the project directory, run:
+   npm install
+   npm run dev
+
+TEST ORDER:
+A. Web Search OFF -> ask "What can you do?"
+B. Confirm Gemini answers.
+C. Web Search ON -> ask a simple current-information question.
+D. If OFF works but ON gives 429, that indicates a Gemini quota/search-model issue rather than the basic chatbot connection.
+
+The API model is controlled by GEMINI_MODEL in .env; changing V1 to V2 does not require a separate model setting inside the webpage.
